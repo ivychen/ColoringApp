@@ -4,6 +4,19 @@
     <h2>Choose Your Scientist</h2>
   </header>
 
+  <!-- Main Menu: Scientist Selection List -->
+  <ul class="scientist-menu">
+    <li class="scientist-item"
+        ng-repeat="scientist in scientists"
+        ng-class="{'selected-border'}: emptyCardsArray">
+        <div class="scientist-card"
+             ng-model="user-selection.cards"
+             ng-class="active.cards">
+             {{ scientist.name }}
+        </div>
+      </li>
+  </ul>
+
   <!-- Main Menu: Navigation Menu -->
   <div class="nav-bar">
     <ul class="nav-menu">
@@ -17,6 +30,8 @@
           <i class="fa fa-arrow-down" aria-hidden="true"></i>
         </a>
       </li>
+      <li class="nav-item">
+        <a id="coloring" ng-href="coloring" class="button text-button">Color</a>
     </ul>
   </div>
 </div>

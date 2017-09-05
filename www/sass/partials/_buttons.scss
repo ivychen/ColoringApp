@@ -1,5 +1,5 @@
 // buttons
-.button {
+button, .button {
    color: $white;
    text-align: center;
    background-color: transparent;
@@ -35,5 +35,16 @@
     font-size: 1.25rem;
     padding: .25rem;
     vertical-align: middle;
+  }
+
+  &.svg-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+
+    & svg {
+      height: auto;
+    }
   }
 }

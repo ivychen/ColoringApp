@@ -1,0 +1,18 @@
+#navleft, #navright {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#canvasmain {
+  height: 100%;
+}
+
+.eraser, .pencil {
+  
+}
+
+.save {
+  background-color: $sunglow;
+}

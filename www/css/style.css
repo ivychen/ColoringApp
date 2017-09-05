@@ -62,16 +62,17 @@ p {
 /* line 60, ../sass/partials/_base.scss */
 .view {
   height: 100%;
+  overflow: auto;
   width: 100%;
 }
 
-/* line 65, ../sass/partials/_base.scss */
+/* line 66, ../sass/partials/_base.scss */
 header {
-  margin: 1rem 0;
+  margin: 1rem;
   text-align: center;
 }
 
-/* line 70, ../sass/partials/_base.scss */
+/* line 71, ../sass/partials/_base.scss */
 nav {
   margin: 0px;
   width: 76px;
@@ -85,25 +86,25 @@ nav {
   z-index: 1;
 }
 
-/* line 84, ../sass/partials/_base.scss */
+/* line 85, ../sass/partials/_base.scss */
 nav.left {
   border-right: 2px solid black;
   left: 0;
 }
 
-/* line 88, ../sass/partials/_base.scss */
+/* line 89, ../sass/partials/_base.scss */
 nav.right {
   border-left: 2px solid black;
   right: 0;
 }
 
 /* Fullscreen */
-/* line 94, ../sass/partials/_base.scss */
+/* line 95, ../sass/partials/_base.scss */
 body.fullscreen {
   overflow: hidden;
 }
 
-/* line 96, ../sass/partials/_base.scss */
+/* line 97, ../sass/partials/_base.scss */
 body.fullscreen article {
   position: absolute;
   overflow: hidden;
@@ -116,13 +117,13 @@ body.fullscreen article {
   margin-bottom: 0;
 }
 
-/* line 106, ../sass/partials/_base.scss */
+/* line 107, ../sass/partials/_base.scss */
 body.fullscreen article .paperscript {
   height: 100%;
   margin-bottom: 0;
 }
 
-/* line 109, ../sass/partials/_base.scss */
+/* line 110, ../sass/partials/_base.scss */
 body.fullscreen article .canvas,
 body.fullscreen article canvas[resize] {
   width: 100%;
@@ -130,7 +131,7 @@ body.fullscreen article canvas[resize] {
 }
 
 /* Color box */
-/* line 116, ../sass/partials/_base.scss */
+/* line 117, ../sass/partials/_base.scss */
 input {
   visibility: hidden;
   margin: 0px;
@@ -140,7 +141,7 @@ input {
   display: none;
 }
 
-/* line 124, ../sass/partials/_base.scss */
+/* line 125, ../sass/partials/_base.scss */
 .colorBox {
   float: left;
   display: inline-block;
@@ -157,14 +158,14 @@ input {
   transition: all 100ms ease-in;
 }
 
-/* line 144, ../sass/partials/_base.scss */
+/* line 145, ../sass/partials/_base.scss */
 #paletteBox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-/* line 149, ../sass/partials/_base.scss */
+/* line 150, ../sass/partials/_base.scss */
 #paletteBox input {
   margin: 0;
   padding: 0;
@@ -173,7 +174,7 @@ input {
   appearance: none;
 }
 
-/* line 155, ../sass/partials/_base.scss */
+/* line 156, ../sass/partials/_base.scss */
 input:checked + .colorBox {
   -webkit-filter: none;
   -moz-filter: none;
@@ -181,7 +182,7 @@ input:checked + .colorBox {
   border: 2px solid white;
 }
 
-/* line 162, ../sass/partials/_base.scss */
+/* line 163, ../sass/partials/_base.scss */
 article {
   cursor: pointer;
   position: relative;
@@ -189,14 +190,14 @@ article {
   z-index: 0;
 }
 
-/* line 169, ../sass/partials/_base.scss */
+/* line 170, ../sass/partials/_base.scss */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 176, ../sass/partials/_base.scss */
+/* line 177, ../sass/partials/_base.scss */
 .nav-bar {
   bottom: 0;
   position: absolute;
@@ -204,14 +205,14 @@ ul {
   padding: 1.5rem 0;
 }
 
-/* line 183, ../sass/partials/_base.scss */
+/* line 184, ../sass/partials/_base.scss */
 .nav-menu {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
 }
 
-/* line 189, ../sass/partials/_base.scss */
+/* line 190, ../sass/partials/_base.scss */
 .nav-item {
   display: inline-flex;
 }
@@ -262,6 +263,24 @@ ul {
 /* line 21, ../sass/partials/_main.scss */
 .main .nav-item:last-child {
   flex: 0 0 50%;
+}
+
+/* line 1, ../sass/partials/_coloring.scss */
+#navleft, #navright {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* line 8, ../sass/partials/_coloring.scss */
+#canvasmain {
+  height: 100%;
+}
+
+/* line 16, ../sass/partials/_coloring.scss */
+.save {
+  background-color: #FDCA31;
 }
 
 /* line 1, ../sass/partials/_modal.scss */
@@ -317,7 +336,7 @@ ul {
 }
 
 /* line 2, ../sass/partials/_buttons.scss */
-.button {
+button, .button {
   color: #FFF;
   text-align: center;
   background-color: transparent;
@@ -329,11 +348,11 @@ ul {
   transition: all 100ms ease-in;
 }
 /* line 13, ../sass/partials/_buttons.scss */
-.button.close {
+button.close, .button.close {
   background: #F58765;
 }
 /* line 17, ../sass/partials/_buttons.scss */
-.button.text-button {
+button.text-button, .button.text-button {
   border: solid #FFF 0.25rem;
   width: 7rem;
   border-radius: 1.5rem;
@@ -341,7 +360,7 @@ ul {
   padding: .5rem 1rem;
 }
 /* line 26, ../sass/partials/_buttons.scss */
-.button.icon-button {
+button.icon-button, .button.icon-button {
   border: 0.25rem solid #FFF;
   border-radius: 50%;
   height: 1.75rem;
@@ -349,10 +368,21 @@ ul {
   width: 1.75rem;
 }
 /* line 34, ../sass/partials/_buttons.scss */
-.button i {
+button i, .button i {
   font-size: 1.25rem;
   padding: .25rem;
   vertical-align: middle;
+}
+/* line 40, ../sass/partials/_buttons.scss */
+button.svg-button, .button.svg-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+/* line 46, ../sass/partials/_buttons.scss */
+button.svg-button svg, .button.svg-button svg {
+  height: auto;
 }
 
 /* line 1, ../sass/partials/_scrollbar.scss */
