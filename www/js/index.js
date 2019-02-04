@@ -186,6 +186,22 @@ coloringApp.controller('ColoringCtrl', ['$scope', function($scope) {
     color = "white";
   }
 
+  $scope.infoModal = function() {
+    console.log("open modal");
+
+    ModalService.showModal({
+      templateUrl: "views/_modal.html",
+      controller: "ModalController",
+      bodyClass: "modal-open"
+    })
+    .then(function(modal) {
+      modal.display = false;
+      modal.close.then(function(result) {
+        console.log("close");
+      });
+    });
+  };
+
 }]);
 
 // StoryCtrl
